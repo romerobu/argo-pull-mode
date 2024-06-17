@@ -1,0 +1,14 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: test-3
+  namespace: openshift-gitops-operator
+spec:
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: default
+  project: default
+  source:
+    path: applications/app/deployment-3/
+    repoURL: 'https://github.com/romerobu/argo-pull-mode.git'
+    targetRevision: HEAD
