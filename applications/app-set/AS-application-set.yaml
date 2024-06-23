@@ -22,12 +22,11 @@ spec:
       name: '{{name}}-helloworld-app'
     spec:
       destination:
-        namespace: helloworld
         server: https://kubernetes.default.svc
       project: default
       source:
-        path: helloworld
-        repoURL: https://github.com/stolostron/application-samples.git
+        path: applications/app
+        repoURL: https://github.com/romerobu/argo-pull-mode.git
       syncPolicy:
         automated: {}
         syncOptions:
