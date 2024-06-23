@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: test-3
-  namespace: openshift-gitops-operator
+  namespace: openshift-gitops
   annotations:
     apps.open-cluster-management.io/ocm-managed-cluster: 'dev-1'
     apps.open-cluster-management.io/ocm-managed-cluster-app-namespace: openshift-gitops
