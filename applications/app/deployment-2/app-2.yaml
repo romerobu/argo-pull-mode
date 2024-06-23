@@ -1,11 +1,15 @@
-
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: test-2
+---
 kind: Deployment
 apiVersion: apps/v1
 metadata:
   name: test-2
   namespace: test-2
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: name
@@ -17,7 +21,7 @@ spec:
     spec:
       containers:
         - name: container
-          image: 'image-registry.openshift-image-registry.svc:5000/openshift/httpd:latest'
+          image: 'test-image-registry.openshift-image-registry.svc:5000/openshift/httpd:latest'
           ports:
             - containerPort: 8080
               protocol: TCP
