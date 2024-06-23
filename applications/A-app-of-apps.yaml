@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: app-of-apps-appset
+  name: app-of-apps
   namespace: openshift-gitops
 spec:
   destination:
@@ -9,6 +9,6 @@ spec:
     namespace: default
   project: default
   source:
-    path: applications/app-set/
+    path: applications/app-of-apps/
     repoURL: 'https://github.com/romerobu/argo-pull-mode.git'
     targetRevision: HEAD

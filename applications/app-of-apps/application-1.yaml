@@ -2,13 +2,16 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: test-1
-  namespace: openshift-gitops-operator
+  namespace: openshift-gitops
   annotations:
+    apps.open-cluster-management.io/ocm-managed-cluster: 'dev-1'
+    apps.open-cluster-management.io/ocm-managed-cluster-app-namespace: openshift-gitops
     argocd.argoproj.io/skip-reconcile: "true"
+  labels:
+    apps.open-cluster-management.io/pull-to-ocm-managed-cluster: "true"
 spec:
   destination:
     server: 'https://kubernetes.default.svc'
-    namespace: default
   project: default
   source:
     path: applications/app/deployment-1/
