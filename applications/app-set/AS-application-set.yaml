@@ -55,6 +55,7 @@ spec:
         argocd.argoproj.io/skip-reconcile: "true"
       labels:
         apps.open-cluster-management.io/pull-to-ocm-managed-cluster: "true"
+        cluster: '{{name}}'
       name: '{{name}}-app-set-degraded-app'
     spec:
       destination:
