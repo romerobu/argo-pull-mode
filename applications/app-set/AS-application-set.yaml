@@ -25,7 +25,7 @@ spec:
         server: https://kubernetes.default.svc
       project: default
       source:
-        path: applications/app/
+        path: applications/app/deployment-1/
         repoURL: https://github.com/romerobu/argo-pull-mode.git
         targetRevision: main
       syncPolicy:
