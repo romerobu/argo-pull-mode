@@ -1,16 +1,14 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: test-1
-  namespace: openshift-gitops-operator
-  annotations:
-    argocd.argoproj.io/skip-reconcile: "true"
+  name: helloworld-allclusters-app
+  namespace: openshift-gitops
 spec:
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: default
   project: default
   source:
-    path: applications/app/deployment-1/
+    path: applications/app-set/
     repoURL: 'https://github.com/romerobu/argo-pull-mode.git'
     targetRevision: HEAD
