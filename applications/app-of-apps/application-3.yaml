@@ -17,3 +17,7 @@ spec:
     path: applications/app/deployment-3/
     repoURL: 'https://github.com/romerobu/argo-pull-mode.git'
     targetRevision: HEAD
+  syncPolicy:
+    automated: {}
+    syncOptions:
+    - CreateNamespace=true
